@@ -8,9 +8,8 @@ int maxProduct(vector<int> &arr){
     for(int i=0;i<n;i++){
         if(prefix==0) prefix = 1;
         if(suffix==0) suffix = 1;
-        prefix*=arr[i];
-        suffix*=arr[n-1-i];
-        
+        prefix = prefix*arr[i];
+        suffix = suffix*arr[n-1-i]; 
         maxProduct = max(maxProduct,max(prefix,suffix));
     }
     return maxProduct;
